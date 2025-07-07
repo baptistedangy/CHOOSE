@@ -3,7 +3,7 @@ import React from "react";
 const LandingPage = () => {
   // Vérification de l'image (fallback emoji si absente)
   const [imgError, setImgError] = React.useState(false);
-  const imageUrl = "/restaurant-scan.jpg"; // Place l'image dans public/ avec ce nom
+  const imageUrl = import.meta.env.BASE_URL + "restaurant-scan.jpg";
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-white to-[#fef6f0] px-4">
