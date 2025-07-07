@@ -22,6 +22,7 @@ Cette page d'accueil présente l'application Choose, qui aide les utilisateurs �
 2. Installe les dépendances :
    ```bash
    npm install
+   
    ```
 3. Lance le serveur de développement (exemple avec Vite ou CRA) :
    ```bash
