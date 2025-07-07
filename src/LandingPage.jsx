@@ -25,8 +25,8 @@ const LandingPage = () => {
           </p>
           <button
             onClick={() => setShowForm(true)}
-            className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 text-white py-4 px-10 rounded-full transition font-semibold text-2xl shadow-xl mt-2 mx-auto md:mx-0 focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:ring-offset-2 animate-fade-in"
-            style={{ transition: "background 0.2s, transform 0.2s", boxShadow: "0 4px 24px 0 rgba(99,102,241,0.15)" }}
+            className="bg-[#5956E9] hover:bg-[#6C6AF5] text-white py-4 px-10 rounded-full font-semibold text-2xl shadow-md mt-2 mx-auto md:mx-0 focus:outline-none focus:ring-4 focus:ring-[#5956E9]/30 focus:ring-offset-2 transition-all duration-200"
+            style={{ letterSpacing: 0.2, boxShadow: "0 2px 16px 0 rgba(89,86,233,0.12)" }}
           >
             Je veux tester Choose !
           </button>
