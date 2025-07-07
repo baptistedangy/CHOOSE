@@ -73,11 +73,11 @@ function SignupModal({ onClose }) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 animate-fade-in">
-      <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center min-h-screen bg-black/40 backdrop-blur-sm">
+      <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-md relative animate-fade-in">
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-400 hover:text-gray-700 text-2xl font-bold focus:outline-none"
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold focus:outline-none"
           aria-label="Fermer"
         >
           ×
@@ -86,7 +86,7 @@ function SignupModal({ onClose }) {
           <div className="flex flex-col items-center justify-center gap-4 py-8">
             <span className="text-4xl">🎉</span>
             <div className="text-xl font-semibold text-gray-800 text-center">Merci !<br />Tu seras prévenu dès le lancement.</div>
-            <button onClick={onClose} className="mt-4 px-6 py-2 bg-indigo-600 text-white rounded-full font-semibold shadow hover:bg-indigo-700">Fermer</button>
+            <button onClick={onClose} className="mt-4 px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full font-semibold shadow hover:shadow-md transition">Fermer</button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-2">
@@ -96,7 +96,7 @@ function SignupModal({ onClose }) {
               placeholder="Prénom"
               value={prenom}
               onChange={e => setPrenom(e.target.value)}
-              className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300 text-lg"
+              className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-lg transition"
               required
             />
             <input
@@ -104,7 +104,7 @@ function SignupModal({ onClose }) {
               placeholder="Nom"
               value={nom}
               onChange={e => setNom(e.target.value)}
-              className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300 text-lg"
+              className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-lg transition"
               required
             />
             <input
@@ -112,13 +112,13 @@ function SignupModal({ onClose }) {
               placeholder="Email"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300 text-lg"
+              className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-lg transition"
               required
             />
             {error && <div className="text-red-500 text-sm text-center">{error}</div>}
             <button
               type="submit"
-              className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 text-white py-3 px-8 rounded-full font-semibold text-lg shadow-lg mt-2 focus:outline-none focus:ring-2 focus:ring-indigo-300"
+              className="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-8 rounded-full font-semibold text-lg shadow-md mt-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
             >
               Je m'inscris
             </button>
