@@ -28,10 +28,32 @@ const LandingPage = () => {
           <p className="text-lg text-gray-600 font-sans max-w-md">
             Choose helps you find the dish that fits your body, activity, and taste — before it hits your plate.
           </p>
-          <div className="flex flex-col gap-1 mt-2 mb-4">
-            <span className="text-2xl">🧍‍♂️ <span className="align-middle text-base">You hesitate.</span></span>
-            <span className="text-2xl">🎯 <span className="align-middle text-base">You guess.</span></span>
-            <span className="text-2xl">😩 <span className="align-middle text-base">You regret.</span></span>
+          {/* Blocs insight/solution/speed */}
+          <div className="flex flex-col gap-4 mt-4 mb-4 w-full">
+            {/* Bloc 1 */}
+            <div className="flex items-start gap-3">
+              <span className="text-2xl mt-1">😕</span>
+              <div className="text-left">
+                <div className="font-bold text-base sm:text-lg text-gray-900 leading-tight">78% of diners regret their order.</div>
+                <div className="text-gray-600 text-sm sm:text-base">Menus can be overwhelming. Choose helps you avoid disappointing picks.</div>
+              </div>
+            </div>
+            {/* Bloc 2 */}
+            <div className="flex items-start gap-3">
+              <span className="text-2xl mt-1">🔍</span>
+              <div className="text-left">
+                <div className="font-bold text-base sm:text-lg text-gray-900 leading-tight">3× more likely to pick the right meal.</div>
+                <div className="text-gray-600 text-sm sm:text-base">When guided by health, goals, and context, your decision improves drastically.</div>
+              </div>
+            </div>
+            {/* Bloc 3 */}
+            <div className="flex items-start gap-3">
+              <span className="text-2xl mt-1">⏱️</span>
+              <div className="text-left">
+                <div className="font-bold text-base sm:text-lg text-gray-900 leading-tight">27 seconds – That's all it takes to choose.</div>
+                <div className="text-gray-600 text-sm sm:text-base">With our assistant, users decide faster — no scrolling, no guessing.</div>
+              </div>
+            </div>
           </div>
           <a
             href="#cta"
