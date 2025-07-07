@@ -5,55 +5,34 @@ const LandingPage = () => {
   const [imgError, setImgError] = React.useState(false);
   const imageUrl = import.meta.env.BASE_URL + "restaurant-scan.jpg";
 
+  React.useEffect(() => {
+    // Empêche le scroll sur la page
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = ""; };
+  }, []);
+
   return (
-    <div className="min-h-screen w-full flex flex-col md:flex-row">
+    <div className="w-full h-screen min-h-0 flex flex-col md:flex-row overflow-hidden">
       {/* Colonne texte */}
-      <div className="relative flex flex-col justify-center items-center md:items-start md:w-1/2 w-full min-h-[400px] md:min-h-screen bg-white/90 p-6 md:p-12 z-10">
-        <div className="w-full max-w-xl mx-auto flex flex-col gap-6">
-          <h1 className="text-4xl font-bold tracking-tight font-sans text-gray-900 text-center md:text-left">
-            Always regretting your order?
+      <div className="relative flex flex-col justify-center items-center md:items-start md:w-1/2 w-full h-1/2 md:h-full bg-white/90 p-6 md:p-12 z-10 animate-fade-in">
+        <div className="w-full max-w-xl mx-auto flex flex-col gap-8">
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight font-sans text-gray-900 text-center md:text-left leading-tight">
+            Bien manger, sans hésiter.
           </h1>
-          <p className="text-lg text-gray-700 font-sans max-w-xl text-center md:text-left">
-            Choose helps you find the dish that fits your body, activity, and taste — before it hits your plate.
+          <p className="text-xl md:text-2xl text-gray-700 font-sans max-w-xl text-center md:text-left">
+            L'assistant qui t'aide à choisir le plat parfait, pour ton corps et tes envies, à chaque resto.
           </p>
-          {/* Blocs insight/solution/speed */}
-          <div className="flex flex-col gap-4 mt-2 mb-2 w-full">
-            {/* Bloc 1 */}
-            <div className="flex items-start gap-3">
-              <span className="text-2xl mt-1">😕</span>
-              <div className="text-left">
-                <div className="font-bold text-base sm:text-lg text-gray-900 leading-tight">78% of diners regret their order.</div>
-                <div className="text-gray-600 text-sm sm:text-base">Menus can be overwhelming. Choose helps you avoid disappointing picks.</div>
-              </div>
-            </div>
-            {/* Bloc 2 */}
-            <div className="flex items-start gap-3">
-              <span className="text-2xl mt-1">🔍</span>
-              <div className="text-left">
-                <div className="font-bold text-base sm:text-lg text-gray-900 leading-tight">3× more likely to pick the right meal.</div>
-                <div className="text-gray-600 text-sm sm:text-base">When guided by health, goals, and context, your decision improves drastically.</div>
-              </div>
-            </div>
-            {/* Bloc 3 */}
-            <div className="flex items-start gap-3">
-              <span className="text-2xl mt-1">⏱️</span>
-              <div className="text-left">
-                <div className="font-bold text-base sm:text-lg text-gray-900 leading-tight">27 seconds – That's all it takes to choose.</div>
-                <div className="text-gray-600 text-sm sm:text-base">With our assistant, users decide faster — no scrolling, no guessing.</div>
-              </div>
-            </div>
-          </div>
           <a
             href="#cta"
-            className="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-8 rounded-full transition font-semibold text-lg shadow-md mt-2 mx-auto md:mx-0 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
+            className="bg-indigo-600 hover:bg-indigo-700 text-white py-4 px-10 rounded-full transition font-semibold text-2xl shadow-lg mt-2 mx-auto md:mx-0 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
             style={{ transition: "background 0.2s, transform 0.2s" }}
           >
-            Join the waitlist
+            Rejoindre la liste d'attente
           </a>
         </div>
       </div>
       {/* Colonne image */}
-      <div className="relative md:w-1/2 w-full min-h-[300px] md:min-h-screen flex items-stretch">
+      <div className="relative md:w-1/2 w-full h-1/2 md:h-full flex items-stretch">
         {imgError ? (
           <div className="flex items-center justify-center w-full h-full bg-gray-50 rounded-none md:rounded-l-3xl shadow-lg text-6xl">
             🍽️
@@ -66,9 +45,6 @@ const LandingPage = () => {
             onError={() => setImgError(true)}
           />
         )}
-        {/* Overlay pour effet visuel si besoin
-        <div className="absolute inset-0 bg-gradient-to-l from-white/60 to-transparent md:block hidden" />
-        */}
       </div>
     </div>
   );
