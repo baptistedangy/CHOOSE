@@ -5,8 +5,8 @@ const LandingPage = () => {
   const [imgError, setImgError] = React.useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-white to-[#fef6f0] px-4">
-      <div className="flex-1 flex items-center justify-center w-full">
+    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-white to-[#fef6f0] px-4">
+      <div className="flex items-center justify-center w-full">
         <div className="bg-white rounded-3xl shadow-2xl p-10 max-w-2xl w-full flex flex-col md:flex-row items-center gap-8 text-center md:text-left animate-fade-in">
           {/* Image réaliste ou fallback emoji */}
           {imgError ? (
