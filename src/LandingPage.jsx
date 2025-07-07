@@ -6,10 +6,10 @@ const LandingPage = () => {
   const imageUrl = import.meta.env.BASE_URL + "restaurant-scan.jpg";
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-[#fef6f0] flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-b from-white to-[#fef6f0] flex items-stretch justify-center">
       <div className="w-full max-w-screen-xl mx-auto flex flex-col md:flex-row p-6 md:p-12 min-h-screen">
         {/* Colonne texte */}
-        <div className="flex flex-1 flex-col justify-center items-center md:items-start md:w-1/2 w-full">
+        <div className="flex flex-col justify-center items-center md:items-start md:w-1/2 w-full">
           <div className="w-full max-w-xl mx-auto flex flex-col gap-6">
             <h1 className="text-4xl font-bold tracking-tight font-sans text-gray-900 text-center md:text-left">
               Always regretting your order?
@@ -54,16 +54,16 @@ const LandingPage = () => {
           </div>
         </div>
         {/* Colonne image */}
-        <div className="flex flex-1 items-center justify-center md:w-1/2 w-full mt-8 md:mt-0">
+        <div className="flex items-center justify-center md:w-1/2 w-full h-64 md:h-auto mt-8 md:mt-0">
           {imgError ? (
-            <div className="flex items-center justify-center w-full h-[220px] md:h-[400px] bg-gray-50 rounded-2xl shadow-lg text-6xl">
+            <div className="flex items-center justify-center w-full h-full md:h-[400px] bg-gray-50 rounded-2xl shadow-lg text-6xl">
               🍽️
             </div>
           ) : (
             <img
               src={imageUrl}
               alt="Scan de menu au restaurant"
-              className="w-full max-w-md h-[220px] md:h-[400px] object-contain rounded-2xl shadow-lg"
+              className="w-full max-w-md h-full md:h-[400px] object-contain rounded-2xl shadow-lg"
               style={{ objectPosition: "center top" }}
               onError={() => setImgError(true)}
             />
