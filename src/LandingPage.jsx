@@ -2,39 +2,37 @@ import React from "react";
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white via-blue-50 to-blue-100">
-      <div
-        className="w-full max-w-xl flex flex-col items-center text-center gap-8 bg-white rounded-2xl shadow-xl px-8 py-12 animate-fade-in"
-        style={{ boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.10)" }}
-      >
-        {/* Illustration expressive */}
-        <div className="text-6xl mb-2">🍽️</div>
-        {/* Titre */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans text-gray-900">
-          Always regretting your order?
-        </h1>
-        {/* Sous-titre */}
-        <p className="text-lg sm:text-xl text-gray-700 max-w-md font-sans">
-          Choose helps you find the dish that fits your body, activity, and taste — before it hits your plate.
-        </p>
-        {/* Ligne problème */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-xl text-gray-600 font-medium font-sans">
-          <span>🧍 You hesitate.</span>
-          <span className="hidden sm:inline">·</span>
-          <span>🎯 You guess.</span>
-          <span className="hidden sm:inline">·</span>
-          <span>😩 You regret.</span>
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-white to-[#fef6f0] px-4">
+      <div className="bg-white rounded-3xl shadow-2xl p-10 max-w-2xl w-full flex flex-col md:flex-row items-center gap-8 text-center md:text-left animate-fade-in">
+        {/* Image réaliste */}
+        <img
+          src="/restaurant-scan.jpg"
+          alt="Scan de menu au restaurant"
+          className="rounded-xl shadow-lg w-[260px] md:w-[300px] mx-auto md:mx-0"
+          style={{ objectFit: 'cover' }}
+        />
+        {/* Contenu texte */}
+        <div className="flex-1 flex flex-col items-center md:items-start gap-4">
+          <h1 className="text-4xl font-bold tracking-tight font-sans text-gray-900">
+            Always regretting your order?
+          </h1>
+          <p className="text-lg text-gray-600 font-sans max-w-md">
+            Choose helps you find the dish that fits your body, activity, and taste — before it hits your plate.
+          </p>
+          <div className="flex flex-col gap-1 mt-2 mb-4">
+            <span className="text-2xl">🧍‍♂️ <span className="align-middle text-base">You hesitate.</span></span>
+            <span className="text-2xl">🎯 <span className="align-middle text-base">You guess.</span></span>
+            <span className="text-2xl">😩 <span className="align-middle text-base">You regret.</span></span>
+          </div>
+          <a
+            href="#cta"
+            className="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6 rounded-full transition font-semibold text-lg shadow-md mt-2"
+            style={{ transition: "background 0.2s, transform 0.2s" }}
+          >
+            Join the waitlist
+          </a>
         </div>
-        {/* Bouton CTA */}
-        <a
-          href="#cta"
-          className="mt-4 px-8 py-4 rounded-xl bg-blue-600 text-white font-semibold text-lg shadow-md hover:bg-blue-700 hover:scale-105 transition-transform duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
-          style={{ transition: "transform 0.2s, background 0.2s" }}
-        >
-          Join the waitlist
-        </a>
       </div>
-      {/* Animation fade-in (si non supportée par Tailwind, à ajouter dans index.css) */}
     </div>
   );
 };
