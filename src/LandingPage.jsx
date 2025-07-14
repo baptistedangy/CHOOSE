@@ -13,15 +13,14 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen min-h-0 flex flex-col justify-center px-6 md:px-12 py-16 bg-white">
-      {/* Section Hero */}
-      <div className="flex flex-col md:flex-row justify-between items-center gap-8 h-full w-full max-w-6xl mx-auto">
+    <div className="w-full bg-white px-6 md:px-12 py-16">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-12">
         {/* Colonne texte */}
-        <div className="flex flex-col items-center md:items-start justify-center flex-1 gap-8">
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight font-sans text-gray-900 text-left leading-tight">
+        <div className="flex-1 flex flex-col items-center md:items-start justify-center max-w-xl">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 text-center md:text-left mb-6">
             Bien manger, sans hésiter.
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 font-sans max-w-xl text-left">
+          <p className="text-xl md:text-2xl text-gray-700 text-center md:text-left mb-8">
             L’assistant qui t’aide à choisir le plat parfait, pour ton corps et tes envies, à chaque resto.
           </p>
           <button
@@ -33,7 +32,7 @@ const LandingPage = () => {
           </button>
         </div>
         {/* Colonne image */}
-        <div className="flex-1 flex justify-center items-center w-full h-full">
+        <div className="flex-1 flex items-center justify-center">
           {imgError ? (
             <div className="flex items-center justify-center w-full h-full bg-gray-50 rounded-2xl shadow-lg text-6xl">
               🍽️
@@ -42,14 +41,14 @@ const LandingPage = () => {
             <img
               src={imageUrl}
               alt="Scan de menu au restaurant"
-              className="w-full max-w-md md:max-w-lg h-auto object-contain rounded-2xl shadow-lg bg-white/60"
+              className="w-full max-w-xs md:max-w-md lg:max-w-lg h-auto rounded-2xl shadow-lg object-contain"
+              style={{ aspectRatio: '3/4' }}
               onError={() => setImgError(true)}
-              style={{ maxHeight: "70vh" }}
             />
           )}
         </div>
-        {showForm && <SignupModal onClose={() => setShowForm(false)} />}
       </div>
+      {showForm && <SignupModal onClose={() => setShowForm(false)} />}
     </div>
   );
 };
