@@ -1,4 +1,5 @@
 import React from "react";
+import Hero from "./Hero";
 
 const LandingPage = () => {
   const [showForm, setShowForm] = React.useState(false);
@@ -10,33 +11,10 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div
-      className="relative w-full min-h-[70vh] flex items-center justify-start bg-gray-900"
-      style={{
-        backgroundImage: `url(${imageUrl})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      {/* Overlay sombre pour lisibilité */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
-      {/* Zone de texte */}
-      <div className="relative z-10 max-w-2xl px-6 md:px-12 py-16 flex flex-col items-start gap-6">
-        <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-lg">
-          Bien manger, sans hésiter.
-        </h1>
-        <p className="text-xl md:text-2xl text-white/90">
-          L’assistant qui t’aide à choisir le plat parfait, pour ton corps et tes envies, à chaque resto.
-        </p>
-        <button
-          onClick={() => setShowForm(true)}
-          className="bg-[#5956E9] hover:bg-[#6C6AF5] text-white py-4 px-10 rounded-full font-semibold text-2xl shadow-md focus:outline-none focus:ring-4 focus:ring-[#5956E9]/30 focus:ring-offset-2 transition-all duration-200"
-        >
-          Je veux tester Choose !
-        </button>
-      </div>
+    <>
+      <Hero onCtaClick={() => setShowForm(true)} imageUrl={imageUrl} />
       {showForm && <SignupModal onClose={() => setShowForm(false)} />}
-    </div>
+    </>
   );
 };
 
