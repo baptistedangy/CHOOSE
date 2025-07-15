@@ -1,52 +1,39 @@
 import React from "react";
 
 const LandingPage = () => {
-  // Vérification de l'image (fallback emoji si absente)
-  const [imgError, setImgError] = React.useState(false);
   const [showForm, setShowForm] = React.useState(false);
   const imageUrl = import.meta.env.BASE_URL + "restaurant-scan.jpg";
 
   React.useEffect(() => {
-    // Empêche le scroll sur la page
     document.body.style.overflow = "hidden";
     return () => { document.body.style.overflow = ""; };
   }, []);
 
   return (
-    <div className="w-full bg-white px-6 md:px-12 py-16">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-12">
-        {/* Colonne texte */}
-        <div className="flex-1 flex flex-col items-center md:items-start justify-center max-w-xl">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 text-center md:text-left mb-6">
-            Bien manger, sans hésiter.
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-700 text-center md:text-left mb-8">
-            L’assistant qui t’aide à choisir le plat parfait, pour ton corps et tes envies, à chaque resto.
-          </p>
-          <button
-            onClick={() => setShowForm(true)}
-            className="bg-[#5956E9] hover:bg-[#6C6AF5] text-white py-4 px-10 rounded-full font-semibold text-2xl shadow-md focus:outline-none focus:ring-4 focus:ring-[#5956E9]/30 focus:ring-offset-2 transition-all duration-200"
-            style={{ letterSpacing: 0.2, boxShadow: "0 2px 16px 0 rgba(89,86,233,0.12)" }}
-          >
-            Je veux tester Choose !
-          </button>
-        </div>
-        {/* Colonne image */}
-        <div className="flex-1 flex items-center justify-center">
-          {imgError ? (
-            <div className="flex items-center justify-center w-full h-full bg-gray-50 rounded-2xl shadow-lg text-6xl">
-              🍽️
-            </div>
-          ) : (
-            <img
-              src={imageUrl}
-              alt="Scan de menu au restaurant"
-              className="w-full max-w-xs md:max-w-md lg:max-w-lg h-auto rounded-2xl shadow-lg object-contain"
-              style={{ aspectRatio: '3/4' }}
-              onError={() => setImgError(true)}
-            />
-          )}
-        </div>
+    <div
+      className="relative w-full min-h-[70vh] flex items-center justify-start bg-gray-900"
+      style={{
+        backgroundImage: `url(${imageUrl})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      {/* Overlay sombre pour lisibilité */}
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      {/* Zone de texte */}
+      <div className="relative z-10 max-w-2xl px-6 md:px-12 py-16 flex flex-col items-start gap-6">
+        <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-lg">
+          Bien manger, sans hésiter.
+        </h1>
+        <p className="text-xl md:text-2xl text-white/90">
+          L’assistant qui t’aide à choisir le plat parfait, pour ton corps et tes envies, à chaque resto.
+        </p>
+        <button
+          onClick={() => setShowForm(true)}
+          className="bg-[#5956E9] hover:bg-[#6C6AF5] text-white py-4 px-10 rounded-full font-semibold text-2xl shadow-md focus:outline-none focus:ring-4 focus:ring-[#5956E9]/30 focus:ring-offset-2 transition-all duration-200"
+        >
+          Je veux tester Choose !
+        </button>
       </div>
       {showForm && <SignupModal onClose={() => setShowForm(false)} />}
     </div>
