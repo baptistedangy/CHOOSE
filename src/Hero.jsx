@@ -2,28 +2,25 @@ import React from "react";
 
 const Hero = ({ onCtaClick, imageUrl }) => (
   <section
-    className="relative w-full min-h-screen h-[100vh] flex flex-row items-center justify-start overflow-hidden"
+    className="relative w-full min-h-screen flex items-center justify-start overflow-hidden"
     style={{
       backgroundImage: `url(${imageUrl})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
     }}
   >
-    {/* Overlay global pour la lisibilité */}
-    <div className="absolute inset-0 bg-black/70 z-0" />
-    {/* Overlay dégradé derrière le texte uniquement */}
-    <div className="absolute left-0 top-0 bottom-0 w-full max-w-xl h-full z-10 pointer-events-none">
-      <div className="h-full w-full bg-gradient-to-r from-black/60 to-transparent" />
+    {/* Overlay dégradé sur la partie gauche */}
+    <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="w-full h-full bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
     </div>
     {/* Bloc texte */}
     <div
-      className="relative z-20 flex flex-col items-center md:items-start justify-center gap-6 md:gap-10 px-4 md:pl-20 w-full max-w-xl h-full min-h-0 text-center md:text-left"
-      style={{ marginTop: 0, marginBottom: 0 }}
+      className="relative z-10 flex flex-col items-start justify-center max-w-xl px-8 md:px-16 py-12 gap-6 md:gap-10 h-full"
     >
-      <h1 className="text-2xl xs:text-3xl md:text-5xl lg:text-6xl font-bold font-sans text-white drop-shadow-lg leading-tight md:leading-tight">
+      <h1 className="text-2xl xs:text-3xl md:text-5xl lg:text-6xl font-bold font-sans text-white drop-shadow-lg leading-tight md:leading-tight text-left">
         Bien manger, sans hésiter.
       </h1>
-      <p className="text-sm xs:text-base md:text-xl text-white/90 font-sans max-w-xl leading-relaxed md:leading-relaxed">
+      <p className="text-sm xs:text-base md:text-xl text-white/90 font-sans leading-relaxed md:leading-relaxed text-left">
         L’assistant qui t’aide à choisir le plat parfait, pour ton corps et tes envies, à chaque resto.
       </p>
       <button
