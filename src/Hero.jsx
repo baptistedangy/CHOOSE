@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = ({ onCtaClick, imageUrl }) => (
   <section
-    className="relative w-full min-h-[80vh] md:min-h-screen flex items-center"
+    className="relative w-full min-h-screen h-[100vh] flex flex-row items-center justify-start overflow-hidden"
     style={{
       backgroundImage: `url(${imageUrl})`,
       backgroundSize: 'cover',
@@ -10,16 +10,16 @@ const Hero = ({ onCtaClick, imageUrl }) => (
     }}
   >
     {/* Overlay plus couvrant pour la lisibilité */}
-    <div className="absolute inset-x-0 top-0 bottom-0 bg-black/70" />
+    <div className="absolute inset-0 bg-black/70 z-0" />
     {/* Bloc texte */}
     <div
-      className="relative z-10 flex flex-col items-start md:items-start justify-center md:justify-start gap-8 px-6 md:pl-20 py-12 md:py-0 w-full max-w-xl"
-      style={{ minHeight: '0', marginTop: 'auto', marginBottom: 'auto' }}
+      className="relative z-10 flex flex-col items-start justify-center gap-8 px-6 md:pl-20 w-full max-w-xl h-full min-h-0"
+      style={{ marginTop: 0, marginBottom: 0 }}
     >
-      <h1 className="text-5xl md:text-6xl font-bold font-sans text-white drop-shadow-lg text-left md:text-left">
+      <h1 className="text-5xl md:text-6xl font-bold font-sans text-white drop-shadow-lg text-left">
         Bien manger, sans hésiter.
       </h1>
-      <p className="text-xl md:text-2xl text-white/90 font-sans max-w-xl text-left md:text-left">
+      <p className="text-xl md:text-2xl text-white/90 font-sans max-w-xl text-left">
         L’assistant qui t’aide à choisir le plat parfait, pour ton corps et tes envies, à chaque resto.
       </p>
       <button
