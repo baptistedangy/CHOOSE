@@ -9,22 +9,26 @@ const Hero = ({ onCtaClick, imageUrl }) => (
       backgroundPosition: 'center',
     }}
   >
-    {/* Overlay plus couvrant pour la lisibilité */}
+    {/* Overlay global pour la lisibilité */}
     <div className="absolute inset-0 bg-black/70 z-0" />
+    {/* Overlay dégradé derrière le texte uniquement */}
+    <div className="absolute left-0 top-0 bottom-0 w-full max-w-xl h-full z-10 pointer-events-none">
+      <div className="h-full w-full bg-gradient-to-r from-black/60 to-transparent" />
+    </div>
     {/* Bloc texte */}
     <div
-      className="relative z-10 flex flex-col items-start justify-center gap-8 px-6 md:pl-20 w-full max-w-xl h-full min-h-0"
+      className="relative z-20 flex flex-col items-start justify-center gap-10 px-6 md:pl-20 w-full max-w-xl h-full min-h-0"
       style={{ marginTop: 0, marginBottom: 0 }}
     >
-      <h1 className="text-5xl md:text-6xl font-bold font-sans text-white drop-shadow-lg text-left">
+      <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-sans text-white drop-shadow-lg text-left leading-tight md:leading-tight">
         Bien manger, sans hésiter.
       </h1>
-      <p className="text-xl md:text-2xl text-white/90 font-sans max-w-xl text-left">
+      <p className="text-base md:text-xl text-white/90 font-sans max-w-xl text-left leading-relaxed md:leading-relaxed">
         L’assistant qui t’aide à choisir le plat parfait, pour ton corps et tes envies, à chaque resto.
       </p>
       <button
         onClick={onCtaClick}
-        className="bg-[#5956E9] hover:bg-[#6C6AF5] text-white text-lg md:text-2xl py-3 md:py-4 px-8 md:px-10 rounded-full font-semibold shadow-md focus:outline-none focus:ring-4 focus:ring-[#5956E9]/30 focus:ring-offset-2 transition-all duration-200"
+        className="bg-[#5956E9] hover:bg-[#6C6AF5] text-white text-lg md:text-2xl py-4 md:py-5 px-10 md:px-14 rounded-full font-semibold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#5956E9]/30 focus:ring-offset-2 transition-all duration-200 transform hover:scale-105 active:scale-100"
       >
         Je veux tester Choose !
       </button>
