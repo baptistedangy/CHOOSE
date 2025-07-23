@@ -17,10 +17,10 @@ const Hero = ({ onCtaClick, imageUrl }) => (
     <div
       className="relative z-10 flex flex-col items-start justify-center max-w-xl px-8 md:px-16 py-12 gap-6 md:gap-10 h-full"
     >
-      <h1 className="text-2xl xs:text-3xl md:text-5xl lg:text-6xl font-bold font-sans text-white drop-shadow-lg leading-tight md:leading-tight text-left">
+      <h1 className="text-white text-5xl md:text-6xl font-bold font-sans drop-shadow-lg leading-relaxed text-left">
         Bien manger, sans hésiter.
       </h1>
-      <p className="text-sm xs:text-base md:text-xl text-white/90 font-sans leading-relaxed md:leading-relaxed text-left">
+      <p className="text-white/90 text-lg md:text-xl font-sans leading-relaxed text-left">
         L’assistant qui t’aide à choisir le plat parfait, pour ton corps et tes envies, à chaque resto.
       </p>
       <button
