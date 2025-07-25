@@ -15,17 +15,17 @@ const Hero = ({ onCtaClick, imageUrl }) => (
     </div>
     {/* Bloc texte */}
     <div
-      className="relative z-10 flex flex-col items-start justify-center max-w-xl px-8 md:px-16 py-12 gap-6 md:gap-10 h-full"
+      className="relative z-10 flex flex-col items-center md:items-start justify-center max-w-xl px-8 md:px-16 py-12 gap-6 md:gap-10 h-full text-center md:text-left"
     >
-      <h1 className="text-white text-5xl md:text-6xl font-bold font-sans drop-shadow-lg leading-relaxed text-left">
+      <h1 className="text-white text-5xl md:text-6xl font-bold font-sans drop-shadow-lg leading-relaxed">
         Bien manger, sans hésiter.
       </h1>
-      <p className="text-white/90 text-lg md:text-xl font-sans leading-relaxed text-left">
+      <p className="text-white/90 text-lg md:text-xl font-sans leading-relaxed">
         L’assistant qui t’aide à choisir le plat parfait, pour ton corps et tes envies, à chaque resto.
       </p>
       <button
         onClick={onCtaClick}
-        className="bg-[#5956E9] hover:bg-[#6C6AF5] text-white text-base xs:text-lg md:text-2xl py-3 xs:py-3.5 md:py-5 px-6 xs:px-8 md:px-14 rounded-full font-semibold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#5956E9]/30 focus:ring-offset-2 transition-all duration-200 transform hover:scale-105 active:scale-100 mt-2"
+        className="bg-gradient-to-r from-green-500 to-blue-500 text-white text-xl font-semibold rounded-full py-4 px-10 shadow-lg hover:opacity-90 transition-all duration-200 mt-2"
       >
         Je veux tester Choose !
       </button>
