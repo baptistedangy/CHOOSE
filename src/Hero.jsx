@@ -15,17 +15,22 @@ const Hero = ({ onCtaClick, imageUrl }) => (
     </div>
     {/* Bloc texte */}
     <div
-      className="relative z-10 flex flex-col items-center md:items-start justify-center max-w-xl px-8 md:px-16 py-12 gap-6 md:gap-10 h-full text-center md:text-left"
+      className="relative z-10 flex flex-col items-center md:items-start justify-center h-full max-w-xl w-full text-center md:text-left 
+        px-6 sm:px-10 md:px-0 md:pl-[12vw] lg:pl-[15vw] xl:pl-[15vw] 2xl:pl-[15vw] py-12 gap-6 md:gap-10"
+      // Sur desktop : padding-left proportionnel (12-15vw), sur mobile : padding horizontal classique
+      // max-w-xl limite la largeur du bloc pour éviter le chevauchement de l'image principale
     >
-      <h1 className="text-white text-5xl md:text-6xl font-bold font-sans drop-shadow-lg leading-relaxed">
+      {/* Fond dégradé sous le bloc texte pour lisibilité */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-black/70 to-transparent pointer-events-none -z-10" />
+      <h1 className="text-[#FFFFFF] text-5xl md:text-6xl font-bold font-sans drop-shadow-lg leading-relaxed">
         Bien manger, sans hésiter.
       </h1>
-      <p className="text-white/90 text-lg md:text-xl font-sans leading-relaxed">
+      <p className="text-[#FFFFFF] text-lg md:text-xl font-sans leading-relaxed drop-shadow-lg">
         L’assistant qui t’aide à choisir le plat parfait, pour ton corps et tes envies, à chaque resto.
       </p>
       <button
         onClick={onCtaClick}
-        className="bg-gradient-to-r from-green-500 to-blue-500 text-white text-xl font-semibold rounded-full py-4 px-10 shadow-lg hover:opacity-90 transition-all duration-200 mt-2"
+        className="bg-white text-[#4F46E5] font-semibold rounded-full px-8 py-4 text-lg md:px-10 md:py-5 md:text-xl shadow-lg transition-all duration-200 mt-2 hover:bg-[#4F46E5] hover:text-white"
       >
         Je veux tester Choose !
       </button>
