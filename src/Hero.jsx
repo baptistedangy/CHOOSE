@@ -15,10 +15,10 @@ const Hero = ({ onCtaClick, imageUrl }) => (
     </div>
     {/* Bloc texte */}
     <div
-      className="relative z-10 flex flex-col items-center md:items-start justify-center h-full max-w-xl w-full text-center md:text-left 
+      className="relative z-10 flex flex-col items-start justify-center h-full max-w-xl w-full 
+        mx-auto text-center md:mx-0 md:text-left 
         px-6 sm:px-10 md:px-0 md:pl-[12vw] lg:pl-[15vw] xl:pl-[15vw] 2xl:pl-[15vw] py-12 gap-6 md:gap-10"
-      // Sur desktop : padding-left proportionnel (12-15vw), sur mobile : padding horizontal classique
-      // max-w-xl limite la largeur du bloc pour éviter le chevauchement de l'image principale
+      // Bloc toujours aligné à gauche, centré verticalement, padding gauche uniquement sur desktop
     >
       {/* Fond dégradé sous le bloc texte pour lisibilité */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-black/70 to-transparent pointer-events-none -z-10" />
