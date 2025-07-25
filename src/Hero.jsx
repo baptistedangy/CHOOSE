@@ -17,8 +17,9 @@ const Hero = ({ onCtaClick, imageUrl }) => (
     <div
       className="relative z-10 flex flex-col items-start justify-center h-full max-w-lg w-full 
         mx-auto text-center md:mx-0 md:text-left 
-        px-4 sm:px-8 md:px-0 md:pl-[18vw] lg:pl-[22vw] xl:pl-[24vw] py-10 gap-4 md:gap-8"
-      // Bloc toujours aligné à gauche, centré verticalement, padding gauche augmenté sur desktop
+        px-4 sm:px-8 md:px-0 md:pl-[18vw] lg:pl-[22vw] xl:pl-[24vw] py-10 gap-4 md:gap-8
+        ml-4 sm:ml-8 md:ml-16"
+      // Bloc toujours aligné à gauche, centré verticalement, padding gauche augmenté sur desktop, marge à gauche pour lisibilité
     >
       {/* Fond dégradé doux et flou sous le bloc texte */}
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-black/70 to-transparent backdrop-blur-sm pointer-events-none -z-10" />
