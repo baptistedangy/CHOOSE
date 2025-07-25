@@ -15,13 +15,13 @@ const Hero = ({ onCtaClick, imageUrl }) => (
     </div>
     {/* Bloc texte */}
     <div
-      className="relative z-10 flex flex-col items-start justify-center h-full max-w-xl w-full 
+      className="relative z-10 flex flex-col items-start justify-center h-full max-w-lg w-full 
         mx-auto text-center md:mx-0 md:text-left 
-        px-6 sm:px-10 md:px-0 md:pl-[12vw] lg:pl-[15vw] xl:pl-[15vw] 2xl:pl-[15vw] py-12 gap-6 md:gap-10"
-      // Bloc toujours aligné à gauche, centré verticalement, padding gauche uniquement sur desktop
+        px-4 sm:px-8 md:px-0 md:pl-[18vw] lg:pl-[22vw] xl:pl-[24vw] py-10 gap-4 md:gap-8"
+      // Bloc toujours aligné à gauche, centré verticalement, padding gauche augmenté sur desktop
     >
-      {/* Fond dégradé sous le bloc texte pour lisibilité */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-black/70 to-transparent pointer-events-none -z-10" />
+      {/* Fond dégradé doux et flou sous le bloc texte */}
+      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-black/70 to-transparent backdrop-blur-sm pointer-events-none -z-10" />
       <h1 className="text-[#FFFFFF] text-5xl md:text-6xl font-bold font-sans drop-shadow-lg leading-relaxed">
         Bien manger, sans hésiter.
       </h1>
@@ -30,7 +30,7 @@ const Hero = ({ onCtaClick, imageUrl }) => (
       </p>
       <button
         onClick={onCtaClick}
-        className="bg-white text-[#4F46E5] font-semibold rounded-full px-8 py-4 text-lg md:px-10 md:py-5 md:text-xl shadow-lg transition-all duration-200 mt-2 hover:bg-[#4F46E5] hover:text-white"
+        className="bg-white text-[#4F46E5] font-semibold rounded-full px-8 py-4 text-lg md:px-16 md:py-6 md:text-2xl shadow-xl transition-all duration-200 mt-6 md:mt-8 hover:bg-[#4F46E5] hover:text-white"
       >
         Je veux tester Choose !
       </button>
