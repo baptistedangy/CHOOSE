@@ -30,7 +30,7 @@ const Hero = ({ onCtaClick, imageUrl }) => (
         </p>
         <button
           onClick={onCtaClick}
-          className="bg-white text-[#4F46E5] font-semibold rounded-full px-8 py-4 text-lg md:px-16 md:py-6 md:text-2xl shadow-xl transition-all duration-200 mt-6 md:mt-8 hover:bg-[#4F46E5] hover:text-white"
+          className="bg-white text-[#4F46E5] font-semibold rounded-full py-4 text-lg md:py-6 md:text-2xl shadow-xl transition-all duration-200 mt-6 md:mt-8 hover:bg-[#4F46E5] hover:text-white px-0 md:px-0"
         >
           Je veux tester Choose !
         </button>
