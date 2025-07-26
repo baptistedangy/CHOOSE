@@ -26,7 +26,7 @@ const Hero = ({ onCtaClick, imageUrl }) => (
           Bien manger, sans hésiter.
         </h1>
         <p className="text-[#FFFFFF] text-lg md:text-xl font-sans leading-relaxed drop-shadow-lg mt-4 md:mt-6">
-          L’assistant qui t’aide à choisir le plat parfait, pour ton corps et tes envies, à chaque resto.
+          L'assistant qui t'aide à choisir le plat parfait, pour ton corps et tes envies, à chaque resto.
         </p>
         <button
           onClick={onCtaClick}
